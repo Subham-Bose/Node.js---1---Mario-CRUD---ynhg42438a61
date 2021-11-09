@@ -3,7 +3,7 @@ const mariochar = require("../models/marioChar");
 const getAllCharacter = async (req, res) => {
   try {
     const tasks = await mariochar.find({});
-    res.status(200).json({ tasks });
+    res.status(200).json(tasks);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
