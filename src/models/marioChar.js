@@ -6,4 +6,4 @@ const marioModel = {
   weight: { type: Number, required: true },
 };
 
-module.exports = mongoose.model("Mario", marioModel);
+module.exports = mongoose.model("mariochar", marioModel);
