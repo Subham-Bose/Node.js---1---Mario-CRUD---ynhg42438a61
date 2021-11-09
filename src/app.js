@@ -1,18 +1,14 @@
-const express = require('express')
-const app = express()
-const bodyParser = require("body-parser");
-const marioModel = require('./models/marioChar');
+const express = require("express");
+const app = express();
+const tasks = require("./router/routes");
 
 // Middlewares
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: false }));
 
 // Parse JSON bodies (as sent by API clients)
 app.use(express.json());
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
-
-// your code goes here
-
-
+// app.use(bodyParser.urlencoded({ extended: false }))
+// app.use(bodyParser.json())
+app.use("/mario", tasks);
 
 module.exports = app;
