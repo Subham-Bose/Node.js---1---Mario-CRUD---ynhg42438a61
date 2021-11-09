@@ -61,7 +61,7 @@ const deleteCharacter = async (req, res) => {
       const e = new Error(`Cannot find any user with id: ${taskID}`);
       throw e;
     }
-    res.status(200).json(task);
+    res.status(200).json({ message: "character deleted" });
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
