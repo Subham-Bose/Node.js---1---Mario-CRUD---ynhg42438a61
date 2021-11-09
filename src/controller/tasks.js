@@ -16,7 +16,7 @@ const createCharacter = async (req, res) => {
       throw new Error("either name or weight is missing");
     }
     const task = await mariochar.create(req.body);
-    res.status(201).json({ task });
+    res.status(201).json(task);
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
@@ -30,7 +30,7 @@ const getCharacter = async (req, res) => {
       const e = new Error(`Cannot find any user with id: ${taskID}`);
       throw e;
     }
-    res.status(200).json({ char });
+    res.status(200).json(char);
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
@@ -47,7 +47,7 @@ const updateCharacter = async (req, res) => {
       const e = new Error(`Cannot find any user with id: ${taskID}`);
       throw e;
     }
-    res.status(200).json({ task });
+    res.status(200).json(task);
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
@@ -61,7 +61,7 @@ const deleteCharacter = async (req, res) => {
       const e = new Error(`Cannot find any user with id: ${taskID}`);
       throw e;
     }
-    res.status(200).json({ task });
+    res.status(200).json(task);
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
